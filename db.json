@@ -1,0 +1,39 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "name": "Desinsectación",
+        "description": "Trabajamos en el control de insectos voladores y rastreros con productos ecoamigables sin riesgos de intoxicación. Utilizamos equipos de última generación.",
+        "image": "./assets/images/servicio1.jpg",
+        "details_button": "Detalles"
+      },
+      {
+        "id": 2,
+        "name": "Desinfección",
+        "description": "La desinfección es importante para prevenir enfermedades eliminando los virus, bacterias y hongos que las producen.",
+        "image": "./assets/images/servicio2.jpg",
+        "details_button": "Detalles"
+      },
+      {
+        "id": 3,
+        "name": "Desratización",
+        "description": "Colocamos estaciones de cebado seguras y sin riesgo de manipulación, jaulas y trampas pegantes, en lugares estratégicos para el control de roedores.",
+        "image": "./assets/images/servicio3.jpg",
+        "details_button": "Detalles"
+      },
+      {
+        "id": 4,
+        "name": "Limpieza de Cisternas",
+        "description": "Utilizamos productos a base de Cloro y Amonio Cuaternario que controlan las bacterias Gram Positivo y Gram Negativo, Escherichia Coli, Salmonella, entre otras.",
+        "image": "./assets/images/servicio4.jpg",
+        "details_button": "Detalles"
+      },
+      {
+        "id": 5,
+        "name": "Diagnóstico y Monitoreo",
+        "description": "Realizamos visitas de evaluación para presentar la propuesta técnica. Supervisamos y brindamos asesoría constantemente y entregamos informes de gestión.",
+        "image": "./assets/images/diagnostico_monitoreo.png",
+        "details_button": "Detalles"
+      }
+    ]
+  }
