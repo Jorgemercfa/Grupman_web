@@ -31,10 +31,10 @@ const service = services.find((s) => s.id === id);
         {{ service.longDescription }}
       </div>
       <iframe
-        v-if="service.video"
+        v-if="service.video1"
         width="1246"
         height="600"
-        :src="service.video"
+        :src="service.video1"
         frameborder="0"
         allowfullscreen
       ></iframe>

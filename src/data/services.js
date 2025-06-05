@@ -15,7 +15,7 @@ export default [
     `,
     image: require('@/assets/servicio1.jpg'),
     details_button: 'Detalles',
-    video: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    video1: 'https://www.youtube.com/embed/tgbNymZ7vqY',
   },
   {
     id: 2,
@@ -34,7 +34,7 @@ export default [
     `,
     image: require('@/assets/servicio2.png'),
     details_button: 'Detalles',
-    video: '',
+    video1: '',
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export default [
     `,
     image: require('@/assets/servicio3.png'),
     details_button: 'Detalles',
-    video: '',
+    video1: '',
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ export default [
     `,
     image: require('@/assets/servicio4.png'),
     details_button: 'Detalles',
-    video: '',
+    video1: '',
   },
   {
     id: 5,
@@ -78,6 +78,6 @@ export default [
     `,
     // image: require('@/assets/servicio5.jpg'), // Descomenta si tienes la imagen
     details_button: 'Detalles',
-    video: '',
+    video1: '',
   },
 ];
