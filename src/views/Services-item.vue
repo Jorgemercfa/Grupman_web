@@ -19,7 +19,7 @@ const router = useRouter()
           <img v-if="service.image" :src="service.image" :alt="service.name" class="service-image" />
           <div class="service-info">
             <h2 class="service-title">{{ service.name }}</h2>
-            <p class="service-description">{{ service.description }}</p>
+            <p class="service-description">{{ service.shortDescription }}</p>
           </div>
         </div>
         <button
