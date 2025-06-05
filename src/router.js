@@ -6,6 +6,7 @@ import Home from './views/Home-item.vue';
 import About from './views/About-item.vue';
 import Services from './views/Services-item.vue';
 import Contact from './views/Contact-item.vue';
+import Component from './components/Component-services-item.vue';
 
 // Define las rutas
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
   { path: '/About-item', component: About, name: 'About-item' },
   { path: '/Services-item', component: Services, name: 'Services-item' },
   { path: '/Contact-item', component: Contact, name: 'Contact-item' },
+  {
+    path: '/Component-services-item',
+    component: Component,
+    name: 'Component-services-item',
+  },
 ];
 
 // Crea una instancia de Vue Router
