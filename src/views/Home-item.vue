@@ -1,6 +1,32 @@
 <script setup>
 import navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+// Imágenes para el carrusel (debes colocarlas en la carpeta assets)
+const images = [
+  require('@/assets/picture1.png'),
+  require('@/assets/picture2.png'), // Añade estas imágenes a tu proyecto
+  require('@/assets/picture3.jpg'), // Añade estas imágenes a tu proyecto// Añade estas imágenes a tu proyecto
+];
+
+const currentImageIndex = ref(0);
+let intervalId = null;
+
+const nextImage = () => {
+  currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
+};
+
+onMounted(() => {
+  // Cambia de imagen cada 5 segundos
+  intervalId = setInterval(nextImage, 5000);
+});
+
+onBeforeUnmount(() => {
+  if (intervalId) {
+    clearInterval(intervalId);
+  }
+});
 </script>
 
 <template>
@@ -8,7 +34,18 @@ import Footer from '@/components/Footer-item.vue';
     <navbar />
   </header>
   <div class="home-area">
-    <img class="img-home" src="@/assets/picture1.png" />
+    <!-- Carrusel automático -->
+    <div class="carousel-container">
+      <img class="img-home" :src="images[currentImageIndex]" />
+      <div class="carousel-dots">
+        <span
+          v-for="(image, index) in images"
+          :key="index"
+          :class="{ active: index === currentImageIndex }"
+          @click="currentImageIndex = index"
+        ></span>
+      </div>
+    </div>
 
     <div class="text-home">
       Somos una empresa de control de plagas de atención experta y
@@ -127,6 +164,7 @@ import Footer from '@/components/Footer-item.vue';
 .img-home {
   width: 100%;
   height: 500px;
+  object-fit: cover;
 }
 
 .home-area {
@@ -209,5 +247,34 @@ import Footer from '@/components/Footer-item.vue';
   justify-content: center;
   align-items: center;
   gap: 20px;
+}
+
+/* Estilos para el carrusel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.carousel-dots span.active {
+  background-color: white;
 }
 </style>
