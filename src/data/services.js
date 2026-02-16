@@ -13,7 +13,7 @@ export default [
         equipos de última generación homologados por OMS. Aseguramos así un
         control efectivo y una residualidad adecuada. 
     `,
-    image: require('@/assets/servicio1.jpg'),
+    image: require('@/assets/servicio1.jpeg'),
     details_button: 'Detalles',
     video1: 'https://www.youtube.com/embed/tgbNymZ7vqY',
   },
