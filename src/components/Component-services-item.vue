@@ -1,97 +1,166 @@
 <script setup>
-import navbar from '@/components/Navbar-item.vue';
+import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 import { useRoute } from 'vue-router';
 import services from '@/data/services.js';
 
 const route = useRoute();
 const id = Number(route.params.id);
+
 const service = services.find((s) => s.id === id);
 </script>
 
 <template>
   <header>
-    <navbar />
+    <Navbar />
   </header>
-  <div class="type-service" v-if="service">
-    <h1 class="title">{{ service.name }}</h1>
-    <div class="return-area">
-      <router-link to="/Services-item">
+
+  <main class="container">
+    <div v-if="service" class="service-wrapper">
+      <router-link to="/Services-item" class="return-area">
         <button class="card-button">Regresar</button>
       </router-link>
-    </div>
-    <div class="type-content">
+
+      <h1 class="title">{{ service.name }}</h1>
+
       <img
         v-if="service.image"
         class="service-image-details"
         :src="service.image"
         :alt="service.name"
       />
+
       <div class="text-service-type">
         {{ service.longDescription }}
       </div>
-      <iframe
-        v-if="service.video1"
-        width="1246"
-        height="600"
-        :src="service.video1"
-        frameborder="0"
-        allowfullscreen
-      ></iframe>
+
+      <!-- Video Responsive -->
+      <div v-if="service.video1" class="video-container">
+        <iframe :src="service.video1" frameborder="0" allowfullscreen></iframe>
+      </div>
     </div>
-  </div>
-  <div v-else>
-    <p>Servicio no encontrado.</p>
-  </div>
+
+    <div v-else class="not-found">
+      <p>Servicio no encontrado.</p>
+    </div>
+  </main>
+
   <footer>
     <Footer />
   </footer>
 </template>
 
-<style>
-.type-service {
-  padding-left: 5%;
-  padding-right: 15%;
+<style scoped>
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
   font-family: Outfit, Inter, Avenir, Helvetica, Arial, sans-serif;
-  padding-bottom: 20%;
+}
+
+.service-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .return-area {
-  padding-bottom: 5%;
+  align-self: flex-start;
+  margin-bottom: 20px;
 }
 
-.type-content {
-  gap: 33px;
-  padding-left: 5%;
+.title {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #111;
 }
 
 .service-image-details {
-  height: 400px;
-  border-radius: 10px;
-  width: 1246px;
+  width: 100%;
+  height: 420px;
   object-fit: cover;
-  margin-bottom: 2rem;
+  border-radius: 14px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .text-service-type {
-  padding-top: 5%;
-  padding-right: 5%;
-  padding-left: 15%;
-  padding-bottom: 5%;
-  font-size: 18px;
-  line-height: 1.6;
+  max-width: 800px;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 40px;
 }
+
+/* VIDEO RESPONSIVE PRO */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 .card-button {
   background-color: #007b33;
   color: white;
   border: none;
-  padding: 10px 24px;
+  padding: 10px 26px;
   font-size: 1rem;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
 }
+
 .card-button:hover {
   background: #005a26;
+  transform: translateY(-2px);
+}
+
+.not-found {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 60px 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .service-image-details {
+    height: auto;
+  }
+
+  .text-service-type {
+    font-size: 1rem;
+  }
+
+  .return-area {
+    align-self: center;
+  }
+
+  .card-button {
+    width: 100%;
+  }
 }
 </style>
