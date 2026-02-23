@@ -7,39 +7,37 @@ import Footer from '@/components/Footer-item.vue';
   <header>
     <navbar />
   </header>
-  <div class="about-area-1">
-    <div class="about-area">
-      <h1 class="title-about">Nosotros</h1>
-      <t class="text-about">
-        Somos una empresa de control de plagas de atención experta y
-        personalizada. Brindamos servicios de saneamiento ambiental:
-        Desinsectación, Desratización y Desinfección. También realizamos
-        Mantenimiento de Insectocutores, Limpieza de Tanques y Cisternas y
-        Control Aviar. Trabajamos con productos seguros para su personal y
-        clientes y los mejores equipos para asegurar el Control Integral de
-        Plagas. Contamos con autorización de DIGESA. Nuestros colaboradores
-        representan nuestra esencia. Trabajamos de la mano con el equipo técnico
-        para asegurar la motivación, el compromiso y la capacitación continua en
-        temas técnicos y de Seguridad y Salud en el Trabajo.
-      </t>
-      <h2 class="title-about">Visión:</h2>
-      <t class="text-about">
-        Ser reconocidos como expertos asesores en control de plagas,
-        distinguiéndonos por brindar la mejor atención personalizada, utilizar
-        los mejores productos y equipos para lograr la total satisfacción del
-        cliente.
-      </t>
 
-      <h2 class="title-about">Misión:</h2>
-      <t class="text-about">
-        Brindar un servicio personalizado de control de plagas, que nos
-        diferencie por el profesionalismo de nuestros diagnósticos e informes de
-        seguimiento, la eficacia de las intervenciones, la calidad de los
-        productos y en especial por la experta atención personalizada que nos
-        convierte en soporte y asesor experto de nuestros clientes.
-      </t>
+  <section class="about-section">
+    <div class="about-container">
+      <h1 class="main-title">Nosotros</h1>
+
+      <div class="about-card">
+        <p class="about-text">
+          Somos una empresa especializada en control integral de plagas,
+          brindando atención experta y personalizada. Ofrecemos servicios de
+          desinsectación, desratización, desinfección, mantenimiento de
+          insectocutores, limpieza de tanques y cisternas y control aviar.
+          Trabajamos con productos seguros y equipos de alta tecnología,
+          contando con autorización de DIGESA.
+        </p>
+
+        <h2>Visión</h2>
+        <p>
+          Ser reconocidos como expertos asesores en control de plagas,
+          distinguiéndonos por nuestra atención personalizada y resultados
+          efectivos que garantizan la satisfacción total del cliente.
+        </p>
+
+        <h2>Misión</h2>
+        <p>
+          Brindar un servicio profesional y personalizado, destacando por la
+          precisión de nuestros diagnósticos, eficacia de nuestras
+          intervenciones y compromiso continuo con la calidad y seguridad.
+        </p>
+      </div>
     </div>
-  </div>
+  </section>
 
   <footer>
     <Footer />
@@ -47,25 +45,48 @@ import Footer from '@/components/Footer-item.vue';
 </template>
 
 <style>
-.about-area-1 {
-  margin-bottom: 150px;
+.about-container {
+  width: 85%;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.about-area {
-  height: 220px;
-  margin: 7%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.main-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.title-about {
-  text-align: left;
+.main-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #42ae1a; /* Línea roja */
+  display: block;
+  margin-top: 10px;
+  border-radius: 2px;
 }
 
-.text-about {
-  text-align: left;
+.about-card {
+  background-color: #42ae1a; /* Azul oscuro como la imagen */
+  color: #f2f2f2;
+  padding: 50px;
+  border-radius: 20px;
+  margin-top: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  line-height: 1.7;
+}
+
+.about-card h2 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #ffffff;
+}
+
+.about-card p {
   font-size: 16px;
+  margin-bottom: 15px;
 }
 </style>
