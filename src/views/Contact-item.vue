@@ -1,114 +1,206 @@
 <script setup>
-import navbar from '@/components/Navbar-item.vue';
+import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 </script>
 
 <template>
-  <header>
-    <navbar />
-  </header>
+  <div class="page-wrapper">
+    <header>
+      <Navbar />
+    </header>
 
-  <div class="contact-area">
-    <h1 class="title-cont">Contactenos</h1>
-    <div id="wrapper">
-      <form
-        class="form-area"
-        action="https://formsubmit.co/cokijlmf@gmail.com"
-        method="POST"
-      >
-        <label class="text-form" for="name">Nombre</label>
-        <input class="input-form" type="text" name="Nombre" />
+    <section class="contact-section">
+      <div class="contact-container">
+        <h1 class="main-title">Contáctanos</h1>
 
-        <label class="text-form" for="email">Email</label>
-        <input class="input-form" type="email" name="Email" />
+        <div class="contact-card">
+          <!-- FORMULARIO -->
+          <form
+            class="form-area"
+            action="https://formsubmit.co/cokijlmf@gmail.com"
+            method="POST"
+          >
+            <div class="form-group">
+              <label>Nombre</label>
+              <input type="text" name="Nombre" required />
+            </div>
 
-        <label class="text-form" for="phone">Número Celular</label>
-        <input class="input-form" type="phone" name="Celular" />
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" name="Email" required />
+            </div>
 
-        <label class="text-form" for="service">Servicio</label>
-        <select class="input-form" id="service" name="Servicio">
-          <option value=""></option>
-          <option value="Desinsectación">Desinsectación</option>
-          <option value="Desinfección">Desinfección</option>
-          <option value="Desratización">Desratización</option>
-          <option value="Limpieza de cisternas">Limpieza de cisternas</option>
-          <option value="Diagnóstico y monitoreo">
-            Diagnóstico y monitoreo
-          </option>
-        </select>
+            <div class="form-group">
+              <label>Número Celular</label>
+              <input type="tel" name="Celular" />
+            </div>
 
-        <label class="text-form" for="address">Dirección</label>
-        <input class="input-form" type="text" name="Dirección" />
+            <div class="form-group">
+              <label>Servicio</label>
+              <select name="Servicio">
+                <option value="">Seleccionar servicio</option>
+                <option>Desinsectación</option>
+                <option>Desinfección</option>
+                <option>Desratización</option>
+                <option>Limpieza de cisternas</option>
+                <option>Diagnóstico y monitoreo</option>
+              </select>
+            </div>
 
-        <label class="text-form" for="meters">Metros cuadrados</label>
-        <input class="input-form" type="text" name="Metros" />
+            <div class="form-group">
+              <label>Dirección</label>
+              <input type="text" name="Dirección" />
+            </div>
 
-        <label class="text-form" for="comment">Mensaje</label>
-        <textarea class="input-form" type="text" name="Mensaje"></textarea>
+            <div class="form-group">
+              <label>Metros cuadrados</label>
+              <input type="text" name="Metros" />
+            </div>
 
-        <input class="input-button" type="submit" value="Enviar" />
-      </form>
-    </div>
-    <div class="other-contact">
-      <t>Telefono: (01) 739 7854</t>
-      <t>Celular: 914 114 660</t>
-      <t>Correo: informes@grupman.pe</t>
-    </div>
+            <div class="form-group">
+              <label>Mensaje</label>
+              <textarea name="Mensaje" rows="4"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar mensaje</button>
+          </form>
+
+          <!-- INFORMACIÓN -->
+          <div class="contact-info">
+            <h2>Información de contacto</h2>
+            <p><strong>Teléfono:</strong> (01) 739 7854</p>
+            <p><strong>Celular:</strong> 914 114 660</p>
+            <p><strong>Correo:</strong> informes@grupman.pe</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <Footer />
+    </footer>
   </div>
-  <footer>
-    <Footer />
-  </footer>
 </template>
 
-<style>
-.contact-area {
-  margin: 3%;
-  text-align: left;
+<style scoped>
+.page-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f6f3;
+}
+
+.contact-section {
+  flex: 1;
+  padding: 120px 0 80px 0;
+}
+
+.contact-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.main-title::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  background-color: #42ae1a;
+  display: block;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.contact-card {
+  display: flex;
+  gap: 60px;
+  background: white;
+  padding: 60px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  flex-wrap: wrap;
 }
 
 .form-area {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #42ae1a;
+  box-shadow: 0 0 0 3px rgba(66, 174, 26, 0.15);
+}
+
+.submit-btn {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
   background-color: #42ae1a;
-  width: 500px;
-  height: 550px;
-  text-align: left;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #2e8f12;
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
+  gap: 15px;
+  font-size: 15px;
 }
 
-.text-form {
-  color: white;
-  text-align: left;
+.contact-info h2 {
+  margin-bottom: 15px;
 }
 
-.input-form {
-  border-radius: 10px;
-  border-color: white;
-  width: 300px;
-  height: 25px;
-}
-
-.input-button {
-  border-radius: 10px;
-  width: 100px;
-  height: 25px;
-  background-color: #004c08;
-  border-color: #004c08;
-  color: white;
-}
-
-.other-contact {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-card {
+    flex-direction: column;
+    padding: 40px;
+  }
 }
 </style>
