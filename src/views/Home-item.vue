@@ -103,10 +103,10 @@ onBeforeUnmount(() => {
         <img class="card-icons" src="@/assets/factory.svg" alt="factory" />
         <div>PLANTAS DE PRODUCCIÓN</div>
       </div>
-      <div class="logs-item">
+      <!-- <div class="logs-item">
         <img class="card-icons" src="@/assets/apartment.svg" alt="apartment" />
         <div>CONDOMINIOS</div>
-      </div>
+      </div> -->
       <div class="logs-item">
         <img
           class="card-icons"
@@ -163,8 +163,9 @@ onBeforeUnmount(() => {
 <style>
 .img-home {
   width: 100%;
-  height: 500px;
+  height: 70vh;
   object-fit: cover;
+  transition: opacity 0.8s ease;
 }
 
 .home-area {
@@ -173,64 +174,74 @@ onBeforeUnmount(() => {
 
 .title-home {
   text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 80px 0 40px 0;
+  text-align: center;
+  position: relative;
+}
+
+.title-home::after {
+  content: '';
+  width: 60px;
+  height: 4px;
+  background-color: #42ae1a;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 5px;
 }
 
 .text-home {
-  height: 16vh;
-  margin: 2%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  max-width: 900px;
+  margin: 60px auto;
   text-align: center;
+  font-size: 18px;
+  line-height: 1.7;
 }
-
 .our-services {
   width: 100%;
-  height: 300px;
-  background-color: #42ae1a;
+  background: linear-gradient(135deg, #42ae1a, #379614);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 40px;
+  padding: 80px 40px;
+  flex-wrap: wrap;
 }
 
 .card-icons {
-  margin-top: 10%;
-  height: 120px;
-  width: 120px;
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-.card-icos-2 {
-  margin-top: 10%;
-  height: 120px;
-  width: 120px;
-  background-color: #000000;
-  border-radius: 10px;
-}
-
-.customer-icons {
-  height: 80px;
-  width: 160px;
-  padding-left: 15px;
+  width: 90px;
+  height: 90px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 18px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
 .logs-item {
-  border-radius: 10px;
-  width: 150px;
-  height: 200px;
+  width: 180px;
+  min-height: 220px;
   background-color: #004c08;
+  border-radius: 16px;
   text-align: center;
   color: #ffffff;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logs-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
 .our-sector {
   width: 100%;
   height: 300px;
-  background-color: #42ae1a;
+  background: linear-gradient(135deg, #42ae1a, #379614);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -239,20 +250,40 @@ onBeforeUnmount(() => {
 }
 
 .our-customers {
-  width: 100%;
-  height: 200px;
-  background-color: #42ae1a;
+  background: linear-gradient(135deg, #42ae1a, #379614);
+  padding: 80px 40px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.customer-icons {
+  height: 60px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.customer-icons:hover {
+  transform: scale(1.08);
+  opacity: 1;
+  filter: grayscale(0%);
 }
 
 /* Estilos para el carrusel */
 .carousel-container {
   position: relative;
   width: 100%;
+}
+
+.carousel-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
 }
 
 .carousel-dots {
@@ -269,12 +300,13 @@ onBeforeUnmount(() => {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #ffffff80;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.carousel-dots span.active {
-  background-color: white;
+.carousel-dots .active {
+  background: #42ae1a;
+  transform: scale(1.2);
 }
 </style>
