@@ -3,7 +3,7 @@ export default [
     id: 1,
     name: 'DESINSECTACIÓN',
     shortDescription:
-      'Trabajamos en el control de insectos voladores y rastreros con productos ecoamigables sin riesgos de intoxicación. Utilizamos equipos de última generación.',
+      'Control profesional de insectos con tecnología ecoamigable y resultados garantizados.',
     longDescription: `
       Trabajamos en el control de insectos voladores y rastreros con productos
         eco amigables, sin riesgos de intoxicación y que cuentan con
@@ -21,7 +21,7 @@ export default [
     id: 2,
     name: 'DESINFECCIÓN',
     shortDescription:
-      'La desinfección es importante para prevenir enfermedades eliminando los virus, bacterias y hongos que las producen.',
+      'Desinfección profesional para espacios seguros y saludables.',
     longDescription: `
         La Desinfección es importante para prevenir enfermedades eliminando los
         virus, bacterias y hongos que las producen. Utilizamos productos
@@ -40,7 +40,7 @@ export default [
     id: 3,
     name: 'DESRATIZACIÓN',
     shortDescription:
-      'Colocamos estaciones de cebado seguras y sin riesgo de manipulación, jaulas y trampas pegantes, en lugares estratégicos para el control de roedores.',
+      'Control efectivo de roedores con métodos especializados.',
     longDescription: `
       Colocamos estaciones de cebado seguras y sin riesgo de manipulación
         jaulas y trampas pegantes, en lugares estratégicos para el control de
@@ -56,7 +56,7 @@ export default [
     id: 4,
     name: 'LIMPIEZA DE CISTERNAS',
     shortDescription:
-      'Utilizamos productos a base de Cloro y Amonio Cuaternario que controlan las bacterias Gram Positivo y Gram Negativo, Escherichia Coli, Salmonella, entre otras.',
+      'Limpieza y desinfección profesional de cisternas para agua segura.',
     longDescription: `
       Utilizamos productos a base de Cloro y Amonio Cuaternario de quinta
         generación que controlan las bacterias Gram Pósito y Gram Negativo,
@@ -72,7 +72,7 @@ export default [
     id: 5,
     name: 'DIAGNÓSTICO Y MONITOREO',
     shortDescription:
-      'Realizamos visitas de evaluación para presentar la propuesta técnica. Supervisamos y brindamos asesoría constantemente y entregamos informes de gestión.',
+      'Inspección técnica y monitoreo continuo para control preventivo.',
     longDescription: `
       Ofrecemos visitas de evaluación para presentar la mejor propuesta técnica según tus necesidades. Supervisamos periódicamente los tratamientos aplicados, brindamos asesoría constante y entregamos informes de gestión detallados para asegurar el éxito en el control de plagas y la satisfacción del cliente.
     `,

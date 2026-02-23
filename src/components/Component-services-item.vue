@@ -72,8 +72,22 @@ const service = services.find((s) => s.id === id);
 
 .title {
   font-size: 2.2rem;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #111;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  width: 70px;
+  height: 4px;
+  background-color: #42ae1a;
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 6px;
 }
 
 .service-image-details {

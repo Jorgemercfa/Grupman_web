@@ -48,37 +48,57 @@ const router = useRouter()
   margin-bottom: 30px;
   font-weight: bold;
   text-align: left;
+  position: relative;
+}
+
+.title-services::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background-color: #42ae1a;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  border-radius: 5px;
 }
 
 .services-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
 }
 
 .service-card {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
-  background-color: #41b619;
+  background: linear-gradient(135deg, #42ae1a, #379614);
   color: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
 
 .service-content {
   display: flex;
   gap: 20px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .service-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 8px;
+  width: 90px;
+  height: 120px;
+  border-radius: 10px;
   object-fit: cover;
-  background-color: #fff;
+  background-color: white;
+  flex-shrink: 0;
 }
 
 .service-info {
@@ -97,6 +117,7 @@ const router = useRouter()
 }
 
 .details-button {
+  margin-top: 20px;
   background-color: #007b33;
   color: white;
   border: none;
