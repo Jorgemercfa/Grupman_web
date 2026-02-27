@@ -27,6 +27,27 @@ onBeforeUnmount(() => {
     clearInterval(intervalId);
   }
 });
+
+// ===============================
+// Carrusel automático de clientes
+// ===============================
+const customers = [
+  require('@/assets/customer-1.jpg'),
+  require('@/assets/customer-2.png'),
+  require('@/assets/customer-3.png'),
+  require('@/assets/customer-4.jpg'),
+  require('@/assets/customer-5.png'),
+  require('@/assets/customer-6.png'),
+  require('@/assets/customer-7.png'),
+  require('@/assets/customer-8.png'),
+  require('@/assets/customer-9.png'),
+  require('@/assets/customer-10.png'),
+  require('@/assets/customer-11.png'),
+  require('@/assets/customer-12.png'),
+];
+
+// Duplicamos el array para efecto infinito
+const duplicatedCustomers = [...customers, ...customers];
 </script>
 
 <template>
@@ -122,36 +143,15 @@ onBeforeUnmount(() => {
     </div>
     <h1 class="title-home">Nuestros clientes</h1>
     <div class="our-customers">
-      <img
-        class="customer-icons"
-        src="@/assets/customer-1.jpg"
-        alt="apartment"
-      />
-      <img
-        class="customer-icons"
-        src="@/assets/customer-2.png"
-        alt="apartment"
-      />
-      <img
-        class="customer-icons"
-        src="@/assets/customer-3.png"
-        alt="apartment"
-      />
-      <img
-        class="customer-icons"
-        src="@/assets/customer-4.jpg"
-        alt="apartment"
-      />
-      <img
-        class="customer-icons"
-        src="@/assets/customer-5.png"
-        alt="apartment"
-      />
-      <img
-        class="customer-icons"
-        src="@/assets/customer-6.png"
-        alt="apartment"
-      />
+      <div class="customers-track">
+        <div
+          class="customer-slide"
+          v-for="(customer, index) in duplicatedCustomers"
+          :key="index"
+        >
+          <img :src="customer" class="customer-icons" />
+        </div>
+      </div>
     </div>
   </div>
 
@@ -249,28 +249,47 @@ onBeforeUnmount(() => {
   gap: 20px;
 }
 
+/* ===============================
+   Carrusel automático clientes
+================================= */
+
 .our-customers {
+  overflow: hidden;
   background: linear-gradient(135deg, #42ae1a, #379614);
-  padding: 80px 40px;
+  padding: 80px 0;
+  position: relative;
+}
+
+.customers-track {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
+  width: max-content;
+  animation: scrollCustomers 25s linear infinite;
+}
+
+.customer-slide {
+  flex: 0 0 auto;
+  padding: 0 40px;
 }
 
 .customer-icons {
   height: 60px;
   width: auto;
-  filter: grayscale(100%);
-  opacity: 0.85;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 .customer-icons:hover {
-  transform: scale(1.08);
-  opacity: 1;
-  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Animación infinita */
+@keyframes scrollCustomers {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 /* Estilos para el carrusel */
@@ -300,7 +319,6 @@ onBeforeUnmount(() => {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ffffff80;
   cursor: pointer;
   transition: background-color 0.3s;
 }
