@@ -35,7 +35,7 @@ const customers = [
   require('@/assets/customer-1.jpg'),
   require('@/assets/customer-2.png'),
   require('@/assets/customer-3.png'),
-  require('@/assets/customer-4.jpg'),
+  require('@/assets/customer-4.png'),
   require('@/assets/customer-5.png'),
   require('@/assets/customer-6.png'),
   require('@/assets/customer-7.png'),
