@@ -1,5 +1,6 @@
 <script setup>
 import 'primeicons/primeicons.css';
+const year = new Date().getFullYear();
 </script>
 
 <template>
@@ -32,7 +33,7 @@ import 'primeicons/primeicons.css';
       </div>
     </div>
     <div class="footer-bottom">
-      © 2026 Grupo Manantial SAC. Todos los derechos reservados.
+      © {{ year }} Grupo Manantial SAC. Todos los derechos reservados.
     </div>
   </footer>
 </template>
