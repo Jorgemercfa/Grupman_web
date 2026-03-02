@@ -76,6 +76,7 @@ const router = useRouter()
   color: white;
   border-radius: 14px;
   padding: 24px;
+  width: 420px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
 }
@@ -106,7 +107,7 @@ const router = useRouter()
 }
 
 .service-title {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 10px;
 }
