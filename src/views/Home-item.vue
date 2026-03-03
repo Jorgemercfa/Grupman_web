@@ -2,6 +2,10 @@
 import navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router'; // ✅ NUEVO
+import services from '@/data/services.js';
+
+const router = useRouter();
 
 // Imágenes para el carrusel (debes colocarlas en la carpeta assets)
 const images = [
@@ -78,29 +82,16 @@ const duplicatedCustomers = [...customers, ...customers];
     </div>
     <h1 class="title-home">Nuestros servicios</h1>
     <div class="our-services">
-      <div class="logs-item">
-        <img class="card-icons" src="@/assets/insect.svg" alt="insect" />
-        <div>DESINSECTACIÓN</div>
-      </div>
-      <div class="logs-item">
-        <img class="card-icons" src="@/assets/virus.svg" alt="virus" />
-        <div>DESINFECCIÓN</div>
-      </div>
-      <div class="logs-item">
-        <img class="card-icons" src="@/assets/rodent.svg" alt="rodent" />
-        <div>DESRATIZACIÓN</div>
-      </div>
-      <div class="logs-item">
-        <img class="card-icons" src="@/assets/moisture.svg" alt="moisture" />
-        <div>LIMPIEZA DE CISTERNAS</div>
-      </div>
-      <div class="logs-item">
-        <img
-          class="card-icons"
-          src="@/assets/monitoring.svg"
-          alt="monitoring"
-        />
-        <div>DIAGNÓSTICO Y MONITOREO</div>
+      <div
+        v-for="service in services"
+        :key="service.id"
+        class="logs-item"
+        @click="
+          router.push({ name: 'ServiceDetails', params: { id: service.id } })
+        "
+      >
+        <img class="card-icons" :src="service.image_home" :alt="service.name" />
+        <div>{{ service.name }}</div>
       </div>
     </div>
     <h1 class="title-home">Nuestros sectores</h1>
