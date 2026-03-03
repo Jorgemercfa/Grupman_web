@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-
 import Home from './views/Home-item.vue';
 import About from './views/About-item.vue';
 import Services from './views/Services-item.vue';
@@ -14,7 +13,7 @@ const routes = [
   {
     path: '/Component-services-item/:id',
     component: Component,
-    name: 'ServiceDetails', // <--- Este nombre debe ser igual al usado en router.push
+    name: 'ServiceDetails',
     props: true,
   },
 ];
@@ -22,6 +21,13 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { left: 0, top: 0 };
+    }
+  },
 });
 
 export default router;
