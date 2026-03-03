@@ -6,8 +6,9 @@ import { ref, onMounted, onBeforeUnmount } from 'vue';
 // Imágenes para el carrusel (debes colocarlas en la carpeta assets)
 const images = [
   require('@/assets/picture1.png'),
-  require('@/assets/picture2.png'), // Añade estas imágenes a tu proyecto
-  require('@/assets/picture3.jpg'), // Añade estas imágenes a tu proyecto// Añade estas imágenes a tu proyecto
+  require('@/assets/picture2.png'),
+  require('@/assets/picture3.jpg'),
+  require('@/assets/picture4.png'),
 ];
 
 const currentImageIndex = ref(0);
@@ -163,8 +164,10 @@ const duplicatedCustomers = [...customers, ...customers];
 <style>
 .img-home {
   width: 100%;
-  height: 70vh;
+  height: 80vh;
+  min-height: 500px;
   object-fit: cover;
+  object-position: center 30%; /* 🔥 mueve el enfoque hacia arriba */
   transition: opacity 0.8s ease;
 }
 
