@@ -76,7 +76,7 @@ export default [
     longDescription: `
       Ofrecemos visitas de evaluación para presentar la mejor propuesta técnica según tus necesidades. Supervisamos periódicamente los tratamientos aplicados, brindamos asesoría constante y entregamos informes de gestión detallados para asegurar el éxito en el control de plagas y la satisfacción del cliente.
     `,
-    // image: require('@/assets/servicio5.jpg'), // Descomenta si tienes la imagen
+    image: require('@/assets/servicio5_provicional.png'), // Cambiar la imagen si se tiene una mejor
     details_button: 'Detalles',
     video1: '',
   },
