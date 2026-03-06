@@ -2,7 +2,7 @@
 import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 import { useRoute } from 'vue-router';
-import { onMounted } from 'vue';
+import { onMounted, watchEffect, nextTick } from 'vue'; // ✅ NUEVO
 import services from '@/data/services.js';
 
 const route = useRoute();
@@ -10,9 +10,30 @@ const id = Number(route.params.id);
 
 const service = services.find((s) => s.id === id);
 
-// ✅ Scroll simple y directo
+// ✅ NUEVO: Función para scroll seguro
+const scrollToTop = async () => {
+  await nextTick();
+  // Esperar un poco para que se renderice completamente
+  setTimeout(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto',
+    });
+  }, 100);
+};
+
+// ✅ NUEVO: Ejecutar al montar el componente
 onMounted(() => {
-  window.scrollTo(0, 0);
+  scrollToTop();
+});
+
+// ✅ NUEVO: Ejecutar cuando cambia el ID (navegación entre servicios)
+watchEffect(() => {
+  const currentId = Number(route.params.id);
+  if (currentId) {
+    scrollToTop();
+  }
 });
 </script>
 
@@ -113,11 +134,12 @@ onMounted(() => {
   margin-bottom: 40px;
 }
 
+/* VIDEO RESPONSIVE PRO */
 .video-container {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  padding-bottom: 56.25%;
+  padding-bottom: 56.25%; /* 16:9 */
   height: 0;
   border-radius: 14px;
   overflow: hidden;

@@ -11,18 +11,18 @@ export default {
 </script>
 
 <style>
-/* ✅ Solución global - Asegurar scroll funcionando */
-html {
-  scroll-behavior: auto !important; /* No smooth, scroll directo */
-}
-
+/* ✅ Estilos globales para que el scroll funcione bien */
+html,
 body {
-  scroll-behavior: auto !important;
+  scroll-behavior: auto;
+  margin: 0;
+  padding: 0;
 }
 
 #app {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: 100vh;
 }
 </style>

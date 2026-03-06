@@ -44,10 +44,8 @@ export default {
 
 <style>
 /* ✅ SOLUCIÓN: Global styles para compensar navbar fixed */
-:global(body),
-:global(html) {
-  scroll-behavior: auto !important;
-  scroll-padding-top: 70px; /* ✅ Esto compensa la altura del navbar */
+html {
+  scroll-padding-top: 80px; /* ✅ Compensa la altura del navbar */
 }
 
 .navbar-area {
@@ -58,9 +56,9 @@ export default {
   align-items: center;
   padding: 0 30px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  position: sticky; /* ✅ Mantener sticky */
+  position: sticky;
   top: 0;
-  /* z-index: 1000; */
+  z-index: 1000;
 }
 
 /* LOGO */
