@@ -12,9 +12,9 @@ const route = useRoute();
    OBTENER ID DESDE ROUTER
 ========================= */
 
-const service = computed(() => {
-  return services.find((s) => s.id === Number(route.params.id));
-});
+const service = computed(() =>
+  services.find((s) => s.id === Number(route.params.id)),
+);
 
 /* =========================
    SCROLL AL INICIO
