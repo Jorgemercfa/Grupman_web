@@ -43,6 +43,13 @@ export default {
 </script>
 
 <style>
+/* ✅ SOLUCIÓN: Global styles para compensar navbar fixed */
+:global(body),
+:global(html) {
+  scroll-behavior: auto !important;
+  scroll-padding-top: 70px; /* ✅ Esto compensa la altura del navbar */
+}
+
 .navbar-area {
   background: linear-gradient(90deg, #42ae1a, #42ae1a);
   height: 70px;
@@ -51,9 +58,9 @@ export default {
   align-items: center;
   padding: 0 30px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  position: sticky;
+  position: sticky; /* ✅ Mantener sticky */
   top: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 
 /* LOGO */
@@ -133,9 +140,21 @@ export default {
   .hamburger {
     display: block;
   }
+
+  .text-navbar {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .text-navbar::after {
+    display: none;
+  }
+
+  .router-link-active::after {
+    width: 0;
+  }
 }
 
-/* Animación */
 @keyframes fadeIn {
   from {
     opacity: 0;

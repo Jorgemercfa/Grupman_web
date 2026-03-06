@@ -2,12 +2,18 @@
 import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 import { useRoute } from 'vue-router';
+import { onMounted } from 'vue';
 import services from '@/data/services.js';
 
 const route = useRoute();
 const id = Number(route.params.id);
 
 const service = services.find((s) => s.id === id);
+
+// ✅ Scroll simple y directo
+onMounted(() => {
+  window.scrollTo(0, 0);
+});
 </script>
 
 <template>
@@ -107,12 +113,11 @@ const service = services.find((s) => s.id === id);
   margin-bottom: 40px;
 }
 
-/* VIDEO RESPONSIVE PRO */
 .video-container {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 14px;
   overflow: hidden;
@@ -129,52 +134,24 @@ const service = services.find((s) => s.id === id);
 }
 
 .card-button {
-  background-color: #007b33;
+  background-color: #42ae1a;
   color: white;
   border: none;
-  padding: 10px 26px;
+  padding: 12px 24px;
   font-size: 1rem;
   border-radius: 6px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .card-button:hover {
-  background: #005a26;
-  transform: translateY(-2px);
+  background-color: #379614;
 }
 
 .not-found {
   text-align: center;
+  padding: 40px 20px;
   font-size: 1.2rem;
-  padding: 60px 0;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-  .container {
-    padding: 20px 15px;
-  }
-
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .service-image-details {
-    height: auto;
-  }
-
-  .text-service-type {
-    font-size: 1rem;
-  }
-
-  .return-area {
-    align-self: center;
-  }
-
-  .card-button {
-    width: 100%;
-  }
+  color: #666;
 }
 </style>
