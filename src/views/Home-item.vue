@@ -426,6 +426,7 @@ const goService = (id) => {
   .logs-item {
     width: 120px;
     min-height: 150px;
+    font-size: 10px;
   }
 
   .card-icons {
