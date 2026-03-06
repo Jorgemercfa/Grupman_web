@@ -23,11 +23,11 @@ const router = useRouter()
           </div>
         </div>
         <button
-          class="details-button"
-          @click="router.push({ name: 'ServiceDetails', params: { id: service.id } })"
-        >
-          {{ service.details_button }}
-        </button>
+  class="details-button"
+  @click="router.push({ name: 'ServiceDetails', params: { id: service.id } })"
+>
+  {{ service.details_button }}
+</button>
       </div>
     </div>
   </div>

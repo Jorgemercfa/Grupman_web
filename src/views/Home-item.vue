@@ -1,63 +1,97 @@
 <script setup>
-import navbar from '@/components/Navbar-item.vue';
+import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
+
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import { useRouter } from 'vue-router'; // ✅ NUEVO
+import { useRouter } from 'vue-router';
 import services from '@/data/services.js';
 
 const router = useRouter();
 
-// Imágenes para el carrusel (debes colocarlas en la carpeta assets)
-const images = [
-  require('@/assets/picture1.png'),
-  require('@/assets/picture2.png'),
-  require('@/assets/picture3.jpg'),
-  require('@/assets/picture4.png'),
-];
+/* =============================
+   CARRUSEL PRINCIPAL
+============================= */
+
+import img1 from '@/assets/picture1.png';
+import img2 from '@/assets/picture2.png';
+import img3 from '@/assets/picture3.jpg';
+import img4 from '@/assets/picture4.png';
+
+const images = [img1, img2, img3, img4];
 
 const currentImageIndex = ref(0);
-let intervalId = null;
+const intervalId = ref(null);
 
 const nextImage = () => {
   currentImageIndex.value = (currentImageIndex.value + 1) % images.length;
 };
 
+/* iniciar carrusel */
+
+const startCarousel = () => {
+  stopCarousel();
+  intervalId.value = setInterval(nextImage, 5000);
+};
+
+/* detener carrusel */
+
+const stopCarousel = () => {
+  if (intervalId.value) {
+    clearInterval(intervalId.value);
+    intervalId.value = null;
+  }
+};
+
 onMounted(() => {
-  // Cambia de imagen cada 5 segundos
-  intervalId = setInterval(nextImage, 5000);
+  startCarousel();
 });
 
 onBeforeUnmount(() => {
-  if (intervalId) {
-    clearInterval(intervalId);
-  }
+  stopCarousel();
 });
 
-// ===============================
-// Carrusel automático de clientes
-// ===============================
-const customers = [
-  require('@/assets/customer-1.jpg'),
-  require('@/assets/customer-2.png'),
-  require('@/assets/customer-3.png'),
-  require('@/assets/customer-4.png'),
-  require('@/assets/customer-5.png'),
-  require('@/assets/customer-6.png'),
-  require('@/assets/customer-7.png'),
-  require('@/assets/customer-8.png'),
-  require('@/assets/customer-9.png'),
-  require('@/assets/customer-10.png'),
-  require('@/assets/customer-11.png'),
-  require('@/assets/customer-12.png'),
-];
+/* =============================
+   CLIENTES
+============================= */
 
-// Duplicamos el array para efecto infinito
+import c1 from '@/assets/customer-1.jpg';
+import c2 from '@/assets/customer-2.png';
+import c3 from '@/assets/customer-3.png';
+import c4 from '@/assets/customer-4.png';
+import c5 from '@/assets/customer-5.png';
+import c6 from '@/assets/customer-6.png';
+import c7 from '@/assets/customer-7.png';
+import c8 from '@/assets/customer-8.png';
+import c9 from '@/assets/customer-9.png';
+import c10 from '@/assets/customer-10.png';
+import c11 from '@/assets/customer-11.png';
+import c12 from '@/assets/customer-12.png';
+
+const customers = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12];
+
+/* duplicamos para animación infinita */
+
 const duplicatedCustomers = [...customers, ...customers];
+
+/* =============================
+   NAVEGACIÓN SERVICIOS
+============================= */
+
+const goService = (id) => {
+  if (!id) return;
+
+  router.push({
+    name: 'ServiceDetails',
+    params: {
+      id: String(id),
+    },
+  });
+};
 </script>
 
 <template>
   <header>
-    <navbar />
+    <Navbar />
   </header>
   <div class="home-area">
     <!-- Carrusel automático -->
@@ -86,9 +120,7 @@ const duplicatedCustomers = [...customers, ...customers];
         v-for="service in services"
         :key="service.id"
         class="logs-item"
-        @click="
-          router.push({ name: 'ServiceDetails', params: { id: service.id } })
-        "
+        @click="goService(service.id)"
       >
         <img class="card-icons" :src="service.image_home" :alt="service.name" />
         <div>{{ service.name }}</div>
@@ -138,8 +170,8 @@ const duplicatedCustomers = [...customers, ...customers];
       <div class="customers-track">
         <div
           class="customer-slide"
-          v-for="(customer, index) in duplicatedCustomers"
-          :key="index"
+          v-for="customer in duplicatedCustomers"
+          :key="customer"
         >
           <img :src="customer" class="customer-icons" />
         </div>
@@ -320,5 +352,89 @@ const duplicatedCustomers = [...customers, ...customers];
 .carousel-dots .active {
   background: #42ae1a;
   transform: scale(1.2);
+}
+/* =================================
+   MEJORAS RESPONSIVE MOVIL
+================================= */
+
+@media (max-width: 768px) {
+  /* Imagen principal */
+  .img-home {
+    height: 55vh;
+    min-height: 280px;
+  }
+
+  /* Texto introductorio */
+  .text-home {
+    font-size: 16px;
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+
+  /* Títulos */
+  .title-home {
+    font-size: 26px;
+    margin: 60px 0 30px 0;
+  }
+
+  /* ===============================
+     SERVICIOS
+  =============================== */
+
+  .our-services {
+    gap: 20px;
+    padding: 50px 20px;
+  }
+
+  .logs-item {
+    width: 140px;
+    min-height: 170px;
+    padding: 15px;
+  }
+
+  .card-icons {
+    width: 65px;
+    height: 65px;
+    padding: 14px;
+  }
+
+  /* ===============================
+     SECTORES
+  =============================== */
+
+  .our-sector {
+    height: auto;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    gap: 20px;
+  }
+}
+
+/* =================================
+   MOVILES PEQUEÑOS
+================================= */
+
+@media (max-width: 480px) {
+  .img-home {
+    height: 45vh;
+  }
+
+  .title-home {
+    font-size: 22px;
+  }
+
+  .logs-item {
+    width: 120px;
+    min-height: 150px;
+  }
+
+  .card-icons {
+    width: 55px;
+    height: 55px;
+  }
+
+  .customer-icons {
+    height: 45px;
+  }
 }
 </style>

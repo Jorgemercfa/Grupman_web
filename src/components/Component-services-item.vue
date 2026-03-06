@@ -1,39 +1,32 @@
 <script setup>
+import { onMounted, nextTick, computed } from 'vue';
+import { useRoute } from 'vue-router';
+
 import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
-import { useRoute } from 'vue-router';
-import { onMounted, watchEffect, nextTick } from 'vue'; // ✅ NUEVO
 import services from '@/data/services.js';
 
 const route = useRoute();
-const id = Number(route.params.id);
 
-const service = services.find((s) => s.id === id);
+/* =========================
+   OBTENER ID DESDE ROUTER
+========================= */
 
-// ✅ NUEVO: Función para scroll seguro
-const scrollToTop = async () => {
-  await nextTick();
-  // Esperar un poco para que se renderice completamente
-  setTimeout(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto',
-    });
-  }, 100);
-};
-
-// ✅ NUEVO: Ejecutar al montar el componente
-onMounted(() => {
-  scrollToTop();
+const service = computed(() => {
+  return services.find((s) => s.id === Number(route.params.id));
 });
 
-// ✅ NUEVO: Ejecutar cuando cambia el ID (navegación entre servicios)
-watchEffect(() => {
-  const currentId = Number(route.params.id);
-  if (currentId) {
-    scrollToTop();
-  }
+/* =========================
+   SCROLL AL INICIO
+========================= */
+
+onMounted(async () => {
+  await nextTick();
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'auto',
+  });
 });
 </script>
 
@@ -48,7 +41,9 @@ watchEffect(() => {
         <button class="card-button">Regresar</button>
       </router-link>
 
-      <h1 class="title">{{ service.name }}</h1>
+      <h1 class="title">
+        {{ service.name }}
+      </h1>
 
       <img
         v-if="service.image"
@@ -61,9 +56,8 @@ watchEffect(() => {
         {{ service.longDescription }}
       </div>
 
-      <!-- Video Responsive -->
       <div v-if="service.video1" class="video-container">
-        <iframe :src="service.video1" frameborder="0" allowfullscreen></iframe>
+        <iframe :src="service.video1" frameborder="0" allowfullscreen> </iframe>
       </div>
     </div>
 
@@ -134,12 +128,11 @@ watchEffect(() => {
   margin-bottom: 40px;
 }
 
-/* VIDEO RESPONSIVE PRO */
 .video-container {
   position: relative;
   width: 100%;
   max-width: 1000px;
-  padding-bottom: 56.25%; /* 16:9 */
+  padding-bottom: 56.25%;
   height: 0;
   border-radius: 14px;
   overflow: hidden;
