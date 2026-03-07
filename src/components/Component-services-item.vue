@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, nextTick, computed } from 'vue';
+import { computed } from 'vue';
 import { useRoute } from 'vue-router';
 
 import Navbar from '@/components/Navbar-item.vue';
@@ -8,26 +8,9 @@ import services from '@/data/services.js';
 
 const route = useRoute();
 
-/* =========================
-   OBTENER ID DESDE ROUTER
-========================= */
-
 const service = computed(() =>
   services.find((s) => s.id === Number(route.params.id)),
 );
-
-/* =========================
-   SCROLL AL INICIO
-========================= */
-
-onMounted(async () => {
-  await nextTick();
-
-  window.scrollTo({
-    top: 0,
-    behavior: 'auto',
-  });
-});
 </script>
 
 <template>
@@ -57,7 +40,7 @@ onMounted(async () => {
       </div>
 
       <div v-if="service.video1" class="video-container">
-        <iframe :src="service.video1" frameborder="0" allowfullscreen> </iframe>
+        <iframe :src="service.video1" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
 
@@ -141,11 +124,10 @@ onMounted(async () => {
 
 .video-container iframe {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  border: none;
+  left: 0;
+  top: 0;
 }
 
 .card-button {

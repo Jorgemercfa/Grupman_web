@@ -43,11 +43,6 @@ export default {
 </script>
 
 <style>
-/* ✅ SOLUCIÓN: Global styles para compensar navbar fixed */
-html {
-  scroll-padding-top: 80px; /* ✅ Compensa la altura del navbar */
-}
-
 .navbar-area {
   background: linear-gradient(90deg, #42ae1a, #42ae1a);
   height: 70px;

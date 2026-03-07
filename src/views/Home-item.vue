@@ -3,10 +3,7 @@ import Navbar from '@/components/Navbar-item.vue';
 import Footer from '@/components/Footer-item.vue';
 
 import { ref, onMounted, onBeforeUnmount } from 'vue';
-import { useRouter } from 'vue-router';
 import services from '@/data/services.js';
-
-const router = useRouter();
 
 /* =============================
    CARRUSEL PRINCIPAL
@@ -76,17 +73,6 @@ const duplicatedCustomers = [...customers, ...customers];
 /* =============================
    NAVEGACIÓN SERVICIOS
 ============================= */
-
-const goService = (id) => {
-  if (!id) return;
-
-  router.push({
-    name: 'ServiceDetails',
-    params: {
-      id: String(id),
-    },
-  });
-};
 </script>
 
 <template>
@@ -116,15 +102,15 @@ const goService = (id) => {
     </div>
     <h1 class="title-home">Nuestros servicios</h1>
     <div class="our-services">
-      <div
+      <router-link
         v-for="service in services"
         :key="service.id"
+        :to="{ name: 'ServiceDetails', params: { id: service.id } }"
         class="logs-item"
-        @click="goService(service.id)"
       >
         <img class="card-icons" :src="service.image_home" :alt="service.name" />
         <div>{{ service.name }}</div>
-      </div>
+      </router-link>
     </div>
     <h1 class="title-home">Nuestros sectores</h1>
     <div class="our-sector">
@@ -194,9 +180,8 @@ const goService = (id) => {
   transition: opacity 0.8s ease;
 }
 
-.home-area {
-  margin-bottom: 100px;
-}
+/* .home-area {
+} */
 
 .title-home {
   text-align: center;
