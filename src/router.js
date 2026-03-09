@@ -11,24 +11,26 @@ const routes = [
   { path: '/About-item', name: 'About', component: About },
   { path: '/Services-item', name: 'Services', component: Services },
   { path: '/Contact-item', name: 'Contact', component: Contact },
-  { path: '/service/:id', name: 'ServiceDetails', component: ServiceDetails },
+  { path: '/service/:id', name: 'ServiceDetails', component: ServiceDetails }, // ✅ Ruta correcta
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-
-  scrollBehavior() {
-    return { top: 0 };
+  scrollBehavior(to, from, savedPosition) {
+    // ✅ MEJORADO: Mejor scrollBehavior
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0, behavior: 'auto' };
+    }
   },
 });
 
-router.afterEach((to) => {
-  console.log('Navegó a:', to.fullPath);
-  console.log('Scroll actual window:', window.scrollY);
+// ✅ Asegurar scroll en navegación
+router.afterEach(() => {
   window.scrollTo(0, 0);
-  console.log('Scroll después:', window.scrollY);
 });
 
 export default router;

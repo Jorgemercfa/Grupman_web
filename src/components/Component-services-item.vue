@@ -1,5 +1,5 @@
 <script setup>
-import { computed } from 'vue';
+import { computed, onMounted, watch, nextTick } from 'vue';
 import { useRoute } from 'vue-router';
 
 import Navbar from '@/components/Navbar-item.vue';
@@ -10,6 +10,57 @@ const route = useRoute();
 
 const service = computed(() =>
   services.find((s) => s.id === Number(route.params.id)),
+);
+
+// Busca el “scroll container” real (si existiera)
+function getScrollContainer() {
+  // 1) Si tienes un contenedor layout con overflow, ponle un id y úsalo aquí.
+  // return document.querySelector('#app-scroll');
+
+  // 2) Fallbacks comunes:
+  return document.scrollingElement || document.documentElement || document.body;
+}
+
+async function forceScrollTop() {
+  await nextTick();
+
+  // 1) Scroll del documento
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
+  // 2) Scroll del contenedor real (si no es window)
+  const el = getScrollContainer();
+  if (el) el.scrollTop = 0;
+
+  // 3) Doble “refuerzo” por si hay imágenes/iframes que cambian el layout después
+  setTimeout(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const el2 = getScrollContainer();
+    if (el2) el2.scrollTop = 0;
+  }, 50);
+
+  setTimeout(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    const el3 = getScrollContainer();
+    if (el3) el3.scrollTop = 0;
+  }, 250);
+}
+
+onMounted(() => {
+  forceScrollTop();
+});
+
+// IMPORTANTE: si cambias entre servicios (id cambia), vuelve a forzar scroll
+watch(
+  () => route.params.id,
+  () => {
+    forceScrollTop();
+  },
 );
 </script>
 
@@ -53,7 +104,6 @@ const service = computed(() =>
     <Footer />
   </footer>
 </template>
-
 <style scoped>
 .container {
   max-width: 1100px;
@@ -128,6 +178,7 @@ const service = computed(() =>
   height: 100%;
   left: 0;
   top: 0;
+  border: none;
 }
 
 .card-button {

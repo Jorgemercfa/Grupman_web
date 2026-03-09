@@ -43,6 +43,11 @@ export default {
 </script>
 
 <style>
+/* ✅ NUEVO: Espaciado global para navbar sticky */
+html {
+  scroll-padding-top: 80px;
+}
+
 .navbar-area {
   background: linear-gradient(90deg, #42ae1a, #42ae1a);
   height: 70px;
