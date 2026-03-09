@@ -132,4 +132,35 @@ const router = useRouter()
 .details-button:hover {
   background-color: #005a26;
 }
+
+@media (max-width: 768px) {
+  .services-area {
+    align-items: center;
+  }
+
+  .services-container{
+    align-items: center;
+  }
+
+  .service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #42ae1a, #379614);
+  color: white;
+  border-radius: 14px;
+  padding: 24px;
+  width: 320px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+ }
+}
 </style>

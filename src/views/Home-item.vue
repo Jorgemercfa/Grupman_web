@@ -242,6 +242,7 @@ const duplicatedCustomers = [...customers, ...customers];
   color: #ffffff;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none; /* quita el subrayado */
 }
 
 .logs-item:hover {
