@@ -155,6 +155,19 @@ const router = useRouter()
   transition: all 0.3s ease;
 }
 
+.service-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.service-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
 .service-content {
   display: flex;
   flex-direction: column;
