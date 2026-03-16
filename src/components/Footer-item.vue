@@ -10,7 +10,8 @@ const year = new Date().getFullYear();
         <h4 class="titile-footer">Contacto</h4>
         <div class="footer-text">
           <div>informes@grupman.pe</div>
-          <div>+51 914 114 660</div>
+          <div>Cel. +51 993 544 714 / +51 959 184 944</div>
+          <div>Tel. 01 739 7854</div>
         </div>
       </div>
       <div class="social-media">

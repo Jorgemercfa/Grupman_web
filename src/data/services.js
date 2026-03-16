@@ -14,6 +14,7 @@ export default [
         control efectivo y una residualidad adecuada. 
     `,
     image: require('@/assets/servicio1.jpeg'),
+    // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/insect.svg'),
     details_button: 'Detalles',
     video1: 'https://www.youtube.com/embed/tgbNymZ7vqY',
@@ -34,6 +35,7 @@ export default [
         mohos.
     `,
     image: require('@/assets/servicio2.png'),
+    // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/virus.svg'),
     details_button: 'Detalles',
     video1: '',
@@ -51,6 +53,7 @@ export default [
         Control de Roedores Sinantrópicos de la OMS.
     `,
     image: require('@/assets/servicio3.png'),
+    // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/rodent.svg'),
     details_button: 'Detalles',
     video1: '',
@@ -68,8 +71,8 @@ export default [
         mantener el agua limpia.
     `,
     image: require('@/assets/servicio4.png'),
+    // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/moisture.svg'),
-
     details_button: 'Detalles',
     video1: '',
   },
@@ -82,6 +85,7 @@ export default [
       Ofrecemos visitas de evaluación para presentar la mejor propuesta técnica según tus necesidades. Supervisamos periódicamente los tratamientos aplicados, brindamos asesoría constante y entregamos informes de gestión detallados para asegurar el éxito en el control de plagas y la satisfacción del cliente.
     `,
     image: require('@/assets/servicio5_provicional.png'), // Cambiar la imagen si se tiene una mejor
+    // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/monitoring.svg'),
     details_button: 'Detalles',
     video1: '',

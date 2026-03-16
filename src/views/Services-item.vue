@@ -119,7 +119,7 @@ const router = useRouter()
 
 .details-button {
   margin-top: 20px;
-  background-color: #007b33;
+  background-color: #004c08;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -130,16 +130,18 @@ const router = useRouter()
 }
 
 .details-button:hover {
-  background-color: #005a26;
+  background-color: #004707;
 }
 
 @media (max-width: 768px) {
   .services-area {
     align-items: center;
+    
   }
 
   .services-container{
     align-items: center;
+    margin: auto;
   }
 
   .service-card {

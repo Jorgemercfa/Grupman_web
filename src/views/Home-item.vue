@@ -227,7 +227,7 @@ const duplicatedCustomers = [...customers, ...customers];
   width: 90px;
   height: 90px;
   background-color: white;
-  border-radius: 50%;
+  border-radius: 25%;
   padding: 18px;
   object-fit: contain;
   margin-bottom: 20px;
@@ -288,6 +288,7 @@ const duplicatedCustomers = [...customers, ...customers];
   width: auto;
   opacity: 0.8;
   transition: all 0.3s ease;
+  border-radius: 6px;
 }
 
 .customer-icons:hover {
