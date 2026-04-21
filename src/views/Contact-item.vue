@@ -69,7 +69,7 @@ import Footer from '@/components/Footer-item.vue';
           <div class="contact-info">
             <h2>Información de contacto</h2>
             <p><strong>Teléfono:</strong> (01) 739 7854</p>
-            <p><strong>Celular:</strong> 914 114 660</p>
+            <p><strong>Celular:</strong> +51 993 544 714 / +51 959 184 944</p>
             <p><strong>Correo:</strong> informes@grupman.pe</p>
           </div>
         </div>
