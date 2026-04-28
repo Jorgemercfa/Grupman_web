@@ -17,7 +17,7 @@ export default [
     // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/insect.svg'),
     details_button: 'Detalles',
-    video1: 'https://www.youtube.com/embed/tgbNymZ7vqY',
+    video1: '',
   },
   {
     id: 2,
