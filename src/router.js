@@ -7,11 +7,41 @@ import Contact from './views/Contact-item.vue';
 import ServiceDetails from './components/Component-services-item.vue';
 
 const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/About-item', name: 'About', component: About },
-  { path: '/Services-item', name: 'Services', component: Services },
-  { path: '/Contact-item', name: 'Contact', component: Contact },
-  { path: '/service/:id', name: 'ServiceDetails', component: ServiceDetails }, // ✅ Ruta correcta
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+    meta: { title: 'Inicio | Grupman' },
+  },
+
+  {
+    path: '/About-item',
+    name: 'About',
+    component: About,
+    meta: { title: 'Nosotros | Grupman' },
+  },
+
+  {
+    path: '/Services-item',
+    name: 'Services',
+    component: Services,
+    meta: { title: 'Servicios | Grupman' },
+  },
+
+  {
+    path: '/Contact-item',
+    name: 'Contact',
+    component: Contact,
+    meta: { title: 'Contacto | Grupman' },
+  },
+
+  {
+    path: '/service/:id',
+    name: 'ServiceDetails',
+    component: ServiceDetails,
+    meta: { title: 'Servicio | Grupman' },
+  },
+
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
@@ -19,7 +49,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to, from, savedPosition) {
-    // ✅ MEJORADO: Mejor scrollBehavior
     if (savedPosition) {
       return savedPosition;
     } else {
@@ -28,8 +57,9 @@ const router = createRouter({
   },
 });
 
-// ✅ Asegurar scroll en navegación
-router.afterEach(() => {
+// ✅ Título dinámico por página + scroll
+router.afterEach((to) => {
+  document.title = to.meta.title || 'Grupman';
   window.scrollTo(0, 0);
 });
 
