@@ -17,6 +17,7 @@ export default [
     // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/insect.svg'),
     details_button: 'Detalles',
+    // añadir videos en siguentes actualizaciones
     video1: '',
   },
   {
@@ -38,6 +39,7 @@ export default [
     // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/virus.svg'),
     details_button: 'Detalles',
+    // añadir videos en siguentes actualizaciones
     video1: '',
   },
   {
@@ -56,6 +58,7 @@ export default [
     // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/rodent.svg'),
     details_button: 'Detalles',
+    // añadir videos en siguentes actualizaciones
     video1: '',
   },
   {
@@ -74,6 +77,7 @@ export default [
     // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/moisture.svg'),
     details_button: 'Detalles',
+    // añadir videos en siguentes actualizaciones
     video1: '',
   },
   {
@@ -88,6 +92,7 @@ export default [
     // images_large: require('@/assets/servicio1_large.jpeg'),
     image_home: require('@/assets/monitoring.svg'),
     details_button: 'Detalles',
+    // añadir videos en siguentes actualizaciones
     video1: '',
   },
 ];

@@ -28,7 +28,13 @@ const year = new Date().getFullYear();
             ></a>
           </div>
           <div>
-            <i class="pi pi-whatsapp"></i>
+          <a
+          href="https://wa.me/51993544714"
+        >
+          <i class="pi pi-whatsapp"></i>     
+        </a>
+          
+            
           </div>
         </div>
       </div>
