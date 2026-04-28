@@ -17,7 +17,7 @@ import Footer from '@/components/Footer-item.vue';
           <!-- FORMULARIO -->
           <form
             class="form-area"
-            action="https://formsubmit.co/cokijlmf@gmail.com"
+            action="https://formsubmit.co/informes@grupman.pe"
             method="POST"
           >
             <div class="form-group">
