@@ -80,9 +80,9 @@ watch(
       </h1>
 
       <img
-        v-if="service.image"
+        v-if="service.images_large"
         class="service-image-details"
-        :src="service.image"
+        :src="service.images_large"
         :alt="service.name"
       />
 
