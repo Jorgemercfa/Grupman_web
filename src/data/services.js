@@ -54,7 +54,7 @@ export default [
         Seguimos las técnicas descritas en el Protocolo para la Vigilancia y
         Control de Roedores Sinantrópicos de la OMS.
     `,
-    image: require('@/assets/servicio3.png'),
+    image: require('@/assets/servicio3.jpeg'),
     images_large: require('@/assets/Imagen_servicio_desratización_L.png'),
     image_home: require('@/assets/rodent.svg'),
     details_button: 'Detalles',
@@ -88,7 +88,7 @@ export default [
     longDescription: `
       Ofrecemos visitas de evaluación para presentar la mejor propuesta técnica según tus necesidades. Supervisamos periódicamente los tratamientos aplicados, brindamos asesoría constante y entregamos informes de gestión detallados para asegurar el éxito en el control de plagas y la satisfacción del cliente.
     `,
-    image: require('@/assets/servicio5_provicional.png'), // Cambiar la imagen si se tiene una mejor
+    image: require('@/assets/servicio5.png'), // Cambiar la imagen si se tiene una mejor
     images_large: require('@/assets/monitoreo_large.png'),
     image_home: require('@/assets/monitoring.svg'),
     details_button: 'Detalles',
