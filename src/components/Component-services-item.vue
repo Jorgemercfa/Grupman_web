@@ -147,7 +147,6 @@ watch(
 .service-image-details {
   width: 100%;
   height: 420px;
-  object-fit: cover;
   border-radius: 14px;
   margin-bottom: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
