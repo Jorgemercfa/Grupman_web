@@ -44,7 +44,7 @@ const router = useRouter()
 
 .title-services {
   font-size: 2rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 30px;
   font-weight: bold;
   text-align: left;
