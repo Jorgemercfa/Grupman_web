@@ -17,9 +17,9 @@ import Footer from '@/components/Footer-item.vue';
           Somos una empresa especializada en control integral de plagas,
           brindando atención experta y personalizada. Ofrecemos servicios de
           desinsectación, desratización, desinfección, mantenimiento de
-          insectocutores, limpieza de tanques y cisternas y control aviar.
+          insectocutores, limpieza de tanques y cisternas.
           Trabajamos con productos seguros y equipos de alta tecnología,
-          contando con autorización de DIGESA.
+          contando con autorización de DIGESA y certificación de la SGS.
         </p>
 
         <h2>Visión</h2>
