@@ -73,7 +73,7 @@ export default [
         una limpieza más efectiva y pureza de las cisternas para recibir y
         mantener el agua limpia.
     `,
-    image: require('@/assets/servicio4.png'),
+    image: require('@/assets/servicio4_1.png'),
     images_large: require('@/assets/Imagen_servicio_limpieza_tanques_L.jpeg'),
     image_home: require('@/assets/moisture.svg'),
     details_button: 'Detalles',
