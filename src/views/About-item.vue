@@ -13,7 +13,8 @@ import Footer from '@/components/Footer-item.vue';
       <h1 class="main-title">Nosotros</h1>
 
       <div class="about-card">
-        <p class="about-text">
+        <div class="about-text-container">
+           <p class="about-text">
           Somos una empresa especializada en control integral de plagas,
           brindando atención experta y personalizada. Ofrecemos servicios de
           desinsectación, desratización, desinfección, mantenimiento de
@@ -35,6 +36,15 @@ import Footer from '@/components/Footer-item.vue';
           precisión de nuestros diagnósticos, eficacia de nuestras
           intervenciones y compromiso continuo con la calidad y seguridad.
         </p>
+        </div>
+
+        <div class="about-image-container">
+          <img
+            src="@/assets/about-image.png"
+            alt="Imagen de control de plagas"
+            class="about-image"
+          />
+        </div>
       </div>
     </div>
   </section>
@@ -76,6 +86,11 @@ import Footer from '@/components/Footer-item.vue';
   margin-top: 40px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   line-height: 1.7;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+
 }
 
 .about-card h2 {
@@ -89,4 +104,22 @@ import Footer from '@/components/Footer-item.vue';
   font-size: 16px;
   margin-bottom: 15px;
 }
+
+.about-text-container {
+  flex: 2;
+}
+
+.about-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0; 
+}
+
+.about-image {
+  height: 100%;
+  width: auto;
+  border-radius: 15px;
+}
+
 </style>
