@@ -98,8 +98,7 @@ const duplicatedCustomers = [...customers, ...customers];
       Somos una empresa de control de plagas de atención experta y
       personalizada. Brindamos servicios de saneamiento ambiental:
       Desinsectación, Desratización y Desinfección. También realizamos
-      Mantenimiento de Insectocutores, Limpieza de Tanques y Cisternas y Control
-      Aviar.
+      Mantenimiento de Insectocutores, Limpieza de Tanques y Cisternas.
     </div>
     <h1 class="title-home">Nuestros servicios</h1>
     <div class="our-services">
