@@ -14,7 +14,7 @@ export default [
         control efectivo y una residualidad adecuada. 
     `,
     image: require('@/assets/servicio1.jpeg'),
-    images_large: require('@/assets/Imagen_servicio_desinsectacción_L.jpeg'),
+    images_large: require('@/assets/Imagen_servicio_desinsectacción_L.png'),
     image_home: require('@/assets/insect.svg'),
     details_button: 'Detalles',
     // añadir videos en siguentes actualizaciones
