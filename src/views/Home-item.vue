@@ -115,29 +115,9 @@ const duplicatedCustomers = [...customers, ...customers];
     <h1 class="title-home">Nuestros sectores</h1>
     <div class="our-sector">
       <div class="logs-item">
-        <img class="card-icons" src="@/assets/office.svg" alt="office" />
-        <div>OFICINAS</div>
-      </div>
-      <div class="logs-item">
-        <img
-          class="card-icons"
-          src="@/assets/restaurant.svg"
-          alt="restaurant"
-        />
-        <div>RESTAURANTES</div>
-      </div>
-      <div class="logs-item">
         <img class="card-icons" src="@/assets/storage.svg" alt="storage" />
         <div>ALMACENES</div>
       </div>
-      <div class="logs-item">
-        <img class="card-icons" src="@/assets/factory.svg" alt="factory" />
-        <div>PLANTAS DE PRODUCCIÓN</div>
-      </div>
-      <!-- <div class="logs-item">
-        <img class="card-icons" src="@/assets/apartment.svg" alt="apartment" />
-        <div>CONDOMINIOS</div>
-      </div> -->
       <div class="logs-item">
         <img
           class="card-icons"
@@ -150,6 +130,26 @@ const duplicatedCustomers = [...customers, ...customers];
         <img class="card-icons" src="@/assets/store.svg" alt="store" />
         <div>LOCALES COMERCIALES</div>
       </div>
+      <div class="logs-item">
+        <img class="card-icons" src="@/assets/factory.svg" alt="factory" />
+        <div>PLANTAS DE PRODUCCIÓN</div>
+      </div>
+      <div class="logs-item">
+        <img class="card-icons" src="@/assets/office.svg" alt="office" />
+        <div>OFICINAS</div>
+      </div>
+      <div class="logs-item">
+        <img
+          class="card-icons"
+          src="@/assets/restaurant.svg"
+          alt="restaurant"
+        />
+        <div>RESTAURANTES</div>
+      </div>
+      <!-- <div class="logs-item">
+        <img class="card-icons" src="@/assets/bank.svg" alt="bank" />
+        <div>BANCOS</div>
+      </div> -->
     </div>
     <h1 class="title-home">Nuestros clientes</h1>
     <div class="our-customers">
