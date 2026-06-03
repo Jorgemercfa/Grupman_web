@@ -6,6 +6,19 @@ const year = new Date().getFullYear();
 <template>
   <footer class="footer-area">
     <div class="footer-container">
+    <div class="brands-footer">
+  <h4 class="titile-footer">Empresas</h4>
+  <div class="brands-list">
+    <div class="brand-item">
+      <span class="brand-dot"></span>
+      Grupo Manantial SAC
+    </div>
+    <div class="brand-item">
+      <span class="brand-dot"></span>
+      M&F Soluciones Empresariales SAC
+    </div>
+  </div>
+</div>
       <div class="contact-footer">
         <h4 class="titile-footer">Contacto</h4>
         <div class="footer-text">
@@ -40,8 +53,12 @@ const year = new Date().getFullYear();
       </div>
     </div>
     <div class="footer-bottom">
-      © {{ year }} Grupo Manantial SAC. Todos los derechos reservados.
-    </div>
+  <div class="footer-bottom-names">
+    <span>Grupo Manantial SAC</span>
+    <span>M&amp;F Soluciones Empresariales SAC</span>
+  </div>
+  <div class="footer-copy">© {{ year }} Todos los derechos reservados.</div>
+</div>
   </footer>
 </template>
 
@@ -116,9 +133,25 @@ const year = new Date().getFullYear();
 .footer-bottom {
   text-align: center;
   padding: 20px;
-  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.footer-bottom-names {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 0.8rem;
   color: #cccccc;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: #888888;
+  margin-top: 6px;
 }
 
 /* RESPONSIVE */
