@@ -119,6 +119,10 @@ const duplicatedCustomers = [...customers, ...customers];
         <div>ALMACENES</div>
       </div>
       <div class="logs-item">
+        <img class="card-icons" src="@/assets/bank.svg" alt="bank" />
+        <div>BANCOS</div>
+      </div>
+      <div class="logs-item">
         <img
           class="card-icons"
           src="@/assets/laboratory.svg"
@@ -146,10 +150,6 @@ const duplicatedCustomers = [...customers, ...customers];
         />
         <div>RESTAURANTES</div>
       </div>
-      <!-- <div class="logs-item">
-        <img class="card-icons" src="@/assets/bank.svg" alt="bank" />
-        <div>BANCOS</div>
-      </div> -->
     </div>
     <h1 class="title-home">Nuestros clientes</h1>
     <div class="our-customers">
