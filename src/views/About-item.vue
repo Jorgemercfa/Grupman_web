@@ -55,6 +55,10 @@ import Footer from '@/components/Footer-item.vue';
 </template>
 
 <style>
+.about-section {
+  margin-top: 40px;
+}
+
 .about-container {
   width: 85%;
   max-width: 1100px;
@@ -62,10 +66,11 @@ import Footer from '@/components/Footer-item.vue';
 }
 
 .main-title {
-  font-size: 48px;
+  font-size: 42px;
   font-weight: 700;
   margin-bottom: 20px;
   position: relative;
+  color: black; 
 }
 
 .main-title::after {

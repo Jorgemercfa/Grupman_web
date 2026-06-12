@@ -190,6 +190,7 @@ const duplicatedCustomers = [...customers, ...customers];
   margin: 80px 0 40px 0;
   text-align: center;
   position: relative;
+  color: black;
 }
 
 .title-home::after {

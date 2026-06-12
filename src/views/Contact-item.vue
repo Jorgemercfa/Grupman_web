@@ -83,7 +83,7 @@ import Footer from '@/components/Footer-item.vue';
 <style scoped>
 
 .contact-section {
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .contact-container {
@@ -97,6 +97,7 @@ import Footer from '@/components/Footer-item.vue';
   font-weight: 700;
   margin-bottom: 50px;
   position: relative;
+  color: black; 
 }
 
 .main-title::after {

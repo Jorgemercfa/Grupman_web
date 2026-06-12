@@ -43,7 +43,7 @@ const router = useRouter()
 }
 
 .title-services {
-  font-size: 2rem;
+  font-size: 42px;
   color: #000000;
   margin-bottom: 30px;
   font-weight: bold;
