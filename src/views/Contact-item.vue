@@ -4,7 +4,6 @@ import Footer from '@/components/Footer-item.vue';
 </script>
 
 <template>
-  <div class="page-wrapper">
     <header>
       <Navbar />
     </header>
@@ -79,20 +78,12 @@ import Footer from '@/components/Footer-item.vue';
     <footer>
       <Footer />
     </footer>
-  </div>
 </template>
 
 <style scoped>
-.page-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f4f6f3;
-}
 
 .contact-section {
-  flex: 1;
-  padding: 120px 0 80px 0;
+  margin-top: 80px;
 }
 
 .contact-container {
@@ -121,7 +112,7 @@ import Footer from '@/components/Footer-item.vue';
 .contact-card {
   display: flex;
   gap: 60px;
-  background: white;
+  background: #42ae1a;
   padding: 60px;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
@@ -144,7 +135,7 @@ import Footer from '@/components/Footer-item.vue';
 .form-group label {
   font-weight: 500;
   margin-bottom: 6px;
-  color: #333;
+  color: #ffffff;
 }
 
 .form-group input,
@@ -170,7 +161,7 @@ import Footer from '@/components/Footer-item.vue';
   padding: 14px;
   border-radius: 12px;
   border: none;
-  background-color: #42ae1a;
+  background-color: #004c08;
   color: white;
   font-weight: 600;
   cursor: pointer;
@@ -190,6 +181,7 @@ import Footer from '@/components/Footer-item.vue';
   justify-content: center;
   gap: 15px;
   font-size: 15px;
+  color: #ffffff;
 }
 
 .contact-info h2 {
