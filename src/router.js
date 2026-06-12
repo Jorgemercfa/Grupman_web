@@ -11,35 +11,50 @@ const routes = [
     path: '/',
     name: 'Home',
     component: Home,
-    meta: { title: 'Inicio | Grupman' },
+    meta: {
+      title: 'Inicio | Grupman',
+      description: 'Grupman — soluciones profesionales para tu empresa.',
+    },
   },
 
   {
     path: '/About-item',
     name: 'About',
     component: About,
-    meta: { title: 'Nosotros | Grupman' },
+    meta: {
+      title: 'Nosotros | Grupman',
+      description: 'Conoce al equipo y la historia de Grupman.',
+    },
   },
 
   {
     path: '/Services-item',
     name: 'Services',
     component: Services,
-    meta: { title: 'Servicios | Grupman' },
+    meta: {
+      title: 'Servicios | Grupman',
+      description: 'Descubre todos los servicios profesionales que ofrece Grupman.',
+    },
   },
 
   {
     path: '/Contact-item',
     name: 'Contact',
     component: Contact,
-    meta: { title: 'Contacto | Grupman' },
+    meta: {
+      title: 'Contacto | Grupman',
+      description: 'Contacta con Grupman para más información sobre nuestros servicios.',
+    },
   },
 
   {
     path: '/service/:id',
     name: 'ServiceDetails',
     component: ServiceDetails,
-    meta: { title: 'Servicio | Grupman' },
+    meta: {
+      title: 'Servicio | Grupman',
+      description: 'Detalle del servicio ofrecido por Grupman.',
+    },
   },
 
   { path: '/:pathMatch(.*)*', redirect: '/' },
@@ -57,10 +72,32 @@ const router = createRouter({
   },
 });
 
-// ✅ Título dinámico por página + scroll
+const defaultTitle = 'Grupman';
+const defaultDescription = 'Grupman — soluciones profesionales para tu empresa.';
+
 router.afterEach((to) => {
-  document.title = to.meta.title || 'Grupman';
   window.scrollTo(0, 0);
+
+  // Título dinámico
+  document.title = to.meta.title || defaultTitle;
+
+  // Meta description dinámica
+  let metaDescription = document.querySelector('meta[name="description"]');
+  if (!metaDescription) {
+    metaDescription = document.createElement('meta');
+    metaDescription.setAttribute('name', 'description');
+    document.head.appendChild(metaDescription);
+  }
+  metaDescription.setAttribute('content', to.meta.description || defaultDescription);
+
+  // Canonical dinámico
+  let canonicalLink = document.querySelector('link[rel="canonical"]');
+  if (!canonicalLink) {
+    canonicalLink = document.createElement('link');
+    canonicalLink.setAttribute('rel', 'canonical');
+    document.head.appendChild(canonicalLink);
+  }
+  canonicalLink.setAttribute('href', `${window.location.origin}${to.path}`);
 });
 
 export default router;
