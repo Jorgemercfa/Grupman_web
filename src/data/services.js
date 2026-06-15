@@ -3,15 +3,9 @@ export default [
     id: 1,
     name: 'DESINSECTACIÓN',
     shortDescription:
-      'Control profesional de insectos con tecnología ecoamigable y resultados garantizados.',
+      'Control efectivo de insectos voladores y rastreros mediante tratamientos seguros y de alta eficacia.',
     longDescription: `
-      Trabajamos en el control de insectos voladores y rastreros con productos
-        eco amigables, sin riesgos de intoxicación y que cuentan con
-        certificación de la Organización Mundial de la Salud (OMS), la Food and
-        Drug Administration de Estados Unidos (FDA) y registro en la Dirección
-        General de Salud (DIGESA). Además, nuestros expertos trabajan con
-        equipos de última generación homologados por OMS. Aseguramos así un
-        control efectivo y una residualidad adecuada. 
+      Utilizamos productos ecoamigables, de baja toxicidad y con registro DIGESA, aplicados por personal especializado mediante equipos de última generación. Nuestros tratamientos permiten controlar infestaciones de forma efectiva, brindando una adecuada residualidad y minimizando riesgos para las personas, los alimentos y el medio ambiente. 
     `,
     image: require('@/assets/servicio1.jpeg'),
     images_large: require('@/assets/Imagen_servicio_desinsectacción_L.png'),
@@ -24,16 +18,9 @@ export default [
     id: 2,
     name: 'DESINFECCIÓN',
     shortDescription:
-      'Desinfección profesional para espacios seguros y saludables.',
+      'Protegemos tus ambientes eliminando microorganismos que pueden afectar la salud.',
     longDescription: `
-        La Desinfección es importante para prevenir enfermedades eliminando los
-        virus, bacterias y hongos que las producen. Utilizamos productos
-        biodegradables, de baja toxicidad, que no dejan residuos y tienen acción
-        desodorizante. Acción frente a virus como el Coronavirus asociados al
-        SARS, Coronavirus Humano, Hepatitis A- B y C, Escherichia Coli,
-        Influenza N1H1, Salmonella, HIV, Herpes Simplex. Asimismo, Acción frente
-        a bacterias Gram positivo, bacterias Gram negativo, levaduras, hongos y
-        mohos.
+        Aplicamos desinfectantes biodegradables, de baja toxicidad y sin residuos, efectivos contra virus, bacterias, hongos y mohos. Nuestros tratamientos ayudan a reducir el riesgo de enfermedades y contribuyen a mantener espacios más seguros, higiénicos y saludables.
     `,
     image: require('@/assets/servicio2.png'),
     images_large: require('@/assets/Imagen_servicio_desinfección_L.jpeg'),
@@ -46,7 +33,7 @@ export default [
     id: 3,
     name: 'DESRATIZACIÓN',
     shortDescription:
-      'Control efectivo de roedores con métodos especializados.',
+      'Implementamos programas integrales para la prevención y control de roedores.',
     longDescription: `
       Colocamos estaciones de cebado seguras y sin riesgo de manipulación
         jaulas y trampas pegantes, en lugares estratégicos para el control de
@@ -65,13 +52,9 @@ export default [
     id: 4,
     name: 'LIMPIEZA DE CISTERNAS',
     shortDescription:
-      'Limpieza y desinfección profesional de cisternas para agua segura.',
+      'Garantizamos la limpieza y desinfección de cisternas y reservorios de agua para preservar su calidad e inocuidad.',
     longDescription: `
-      Utilizamos productos a base de Cloro y Amonio Cuaternario de quinta
-        generación que controlan las bacterias Gram Pósito y Gram Negativo,
-        Escheririchia Coli, Salmonella, Gonococo, entre otras. Así aseguramos
-        una limpieza más efectiva y pureza de las cisternas para recibir y
-        mantener el agua limpia.
+      Realizamos la remoción de sedimentos, limpieza de superficies y desinfección utilizando productos autorizados y procedimientos especializados que contribuyen a mantener el agua limpia y segura, conforme a los estándares sanitarios vigentes. Nuestro personal está capacitado para ejecutar estas labores de manera segura y eficiente.
     `,
     image: require('@/assets/servicio4_1.png'),
     images_large: require('@/assets/Imagen_servicio_limpieza_tanques_L.jpeg'),
@@ -84,9 +67,9 @@ export default [
     id: 5,
     name: 'DIAGNÓSTICO Y MONITOREO',
     shortDescription:
-      'Inspección técnica y monitoreo continuo para control preventivo.',
+      'Acompañamos a nuestros clientes con un seguimiento permanente para asegurar la efectividad de los tratamientos.',
     longDescription: `
-      Ofrecemos visitas de evaluación para presentar la mejor propuesta técnica según tus necesidades. Supervisamos periódicamente los tratamientos aplicados, brindamos asesoría constante y entregamos informes de gestión detallados para asegurar el éxito en el control de plagas y la satisfacción del cliente.
+      Realizamos inspecciones periódicas, monitoreo de plagas, evaluaciones técnicas, asesoría especializada e informes de gestión detallados. Nuestro objetivo es prevenir infestaciones, optimizar los resultados y garantizar la tranquilidad de nuestros clientes.
     `,
     image: require('@/assets/servicio5.png'), // Cambiar la imagen si se tiene una mejor
     images_large: require('@/assets/monitoreo_large.png'),
