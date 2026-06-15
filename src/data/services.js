@@ -23,7 +23,7 @@ export default [
         Aplicamos desinfectantes biodegradables, de baja toxicidad y sin residuos, efectivos contra virus, bacterias, hongos y mohos. Nuestros tratamientos ayudan a reducir el riesgo de enfermedades y contribuyen a mantener espacios más seguros, higiénicos y saludables.
     `,
     image: require('@/assets/servicio2.png'),
-    images_large: require('@/assets/Imagen_servicio_desinfección_L.jpeg'),
+    images_large: require('@/assets/Imagen_servicio_desinfección_L.png'),
     image_home: require('@/assets/virus.svg'),
     details_button: 'Detalles',
     // añadir videos en siguentes actualizaciones
