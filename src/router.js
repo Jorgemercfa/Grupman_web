@@ -61,7 +61,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(process.env.BASE_URL),
   routes,
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
@@ -97,7 +97,11 @@ router.afterEach((to) => {
     canonicalLink.setAttribute('rel', 'canonical');
     document.head.appendChild(canonicalLink);
   }
-  canonicalLink.setAttribute('href', `${window.location.origin}${to.path}`);
+  const base = process.env.BASE_URL.endsWith('/')
+    ? process.env.BASE_URL
+    : `${process.env.BASE_URL}/`;
+  const cleanPath = to.path.replace(/^\//, '');
+  canonicalLink.setAttribute('href', `${window.location.origin}${base}${cleanPath}`);
 });
 
 export default router;
