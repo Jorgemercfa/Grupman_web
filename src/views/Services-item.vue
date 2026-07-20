@@ -94,8 +94,8 @@ const router = useRouter()
 }
 
 .service-image {
-  width: 90px;
-  height: 120px;
+  width: 120px;
+  height: 180px;
   border-radius: 10px;
   object-fit: cover;
   background-color: white;
