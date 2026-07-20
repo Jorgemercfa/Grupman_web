@@ -77,14 +77,14 @@ import Footer from '@/components/Footer-item.vue';
   content: '';
   width: 80px;
   height: 4px;
-  background-color: #42ae1a; /* Línea roja */
+  background-color: #42ae1a;
   display: block;
   margin-top: 10px;
   border-radius: 2px;
 }
 
 .about-card {
-  background-color: #42ae1a; /* Azul oscuro como la imagen */
+  background-color: #42ae1a;
   color: #f2f2f2;
   padding: 50px;
   border-radius: 20px;
@@ -95,7 +95,6 @@ import Footer from '@/components/Footer-item.vue';
   flex-direction: row;
   gap: 40px;
   align-items: center;
-
 }
 
 .about-card h2 {
@@ -118,13 +117,62 @@ import Footer from '@/components/Footer-item.vue';
   flex: 1;
   display: flex;
   justify-content: center;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .about-image {
-  height: 100%;
-  width: auto;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
   border-radius: 15px;
+}
+
+/* ---- Responsive: tablets ---- */
+@media (max-width: 900px) {
+  .about-card {
+    padding: 35px;
+    gap: 25px;
+  }
+
+  .main-title {
+    font-size: 34px;
+  }
+}
+
+/* ---- Responsive: móvil ---- */
+@media (max-width: 600px) {
+  .about-container {
+    width: 92%;
+  }
+
+  .about-card {
+    flex-direction: column;
+    padding: 25px;
+    border-radius: 16px;
+  }
+
+  .about-image-container {
+    order: -1; /* imagen arriba del texto, opcional */
+    width: 100%;
+  }
+
+  .about-image {
+    max-width: 220px;
+  }
+
+  .main-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .main-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-card p {
+    font-size: 15px;
+  }
 }
 
 </style>
