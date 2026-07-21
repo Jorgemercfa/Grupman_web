@@ -70,7 +70,7 @@ import Footer from '@/components/Footer-item.vue';
   font-weight: 700;
   margin-bottom: 20px;
   position: relative;
-  color: black; 
+  color: black;
 }
 
 .main-title::after {
@@ -127,11 +127,25 @@ import Footer from '@/components/Footer-item.vue';
   border-radius: 15px;
 }
 
-/* ---- Responsive: tablets ---- */
+/* ---- Tablet: aquí estaba el bug, ahora pasa a columna ---- */
 @media (max-width: 900px) {
+  .about-container {
+    width: 90%;
+  }
+
   .about-card {
+    flex-direction: column;   /* antes seguía en row */
     padding: 35px;
     gap: 25px;
+  }
+
+  .about-image-container {
+    order: -1;
+    width: 100%;
+  }
+
+  .about-image {
+    max-width: 260px;         /* moderada, ni gigante ni chiquita */
   }
 
   .main-title {
@@ -139,25 +153,19 @@ import Footer from '@/components/Footer-item.vue';
   }
 }
 
-/* ---- Responsive: móvil ---- */
+/* ---- Móvil: refina tamaños dentro de la misma estructura en columna ---- */
 @media (max-width: 600px) {
   .about-container {
     width: 92%;
   }
 
   .about-card {
-    flex-direction: column;
     padding: 25px;
     border-radius: 16px;
   }
 
-  .about-image-container {
-    order: -1; /* imagen arriba del texto, opcional */
-    width: 100%;
-  }
-
   .about-image {
-    max-width: 220px;
+    max-width: 200px;
   }
 
   .main-title {
@@ -174,5 +182,4 @@ import Footer from '@/components/Footer-item.vue';
     font-size: 15px;
   }
 }
-
 </style>
